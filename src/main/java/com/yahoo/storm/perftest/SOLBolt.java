@@ -27,29 +27,29 @@ import org.apache.storm.tuple.Values;
 import java.util.Map;
 
 public class SOLBolt extends BaseRichBolt {
-  private OutputCollector _collector;
+    private OutputCollector _collector;
 
-  public SOLBolt() {
-    //Empty
-  }
+    public SOLBolt() {
+        //Empty
+    }
 
-  @Override
-  public void prepare(Map conf, TopologyContext context, OutputCollector collector) {
-    _collector = collector;
-  }
+    @Override
+    public void prepare(Map conf, TopologyContext context, OutputCollector collector) {
+        _collector = collector;
+    }
 
-  @Override
-  public void execute(Tuple tuple) {
-    _collector.emit(tuple, new Values(tuple.getString(0)));
-    _collector.ack(tuple);
-  }
+    @Override
+    public void execute(Tuple tuple) {
+        _collector.emit(tuple, new Values(tuple.getString(0)));
+        _collector.ack(tuple);
+    }
 
-  @Override
-  public void cleanup() {
-  }
+    @Override
+    public void cleanup() {
+    }
 
-  @Override
-  public void declareOutputFields(OutputFieldsDeclarer declarer) {
-    declarer.declare(new Fields("message"));
-  }
+    @Override
+    public void declareOutputFields(OutputFieldsDeclarer declarer) {
+        declarer.declare(new Fields("message"));
+    }
 }
