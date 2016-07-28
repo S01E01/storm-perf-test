@@ -16,12 +16,15 @@
 storm-perf-test
 ===============
 
-Storm Performance Test
+Storm Benchmarking
 
-Try this for examples: 
+Try this for examples benchmark: 
 
 ```
-storm jar ./target/storm_perf_test-1.0.0-SNAPSHOT-jar-with-dependencies.jar com.yahoo.storm.perftest.Main --help
+storm jar ./target/storm_perf_test-1.0.0-SNAPSHOT-jar-with-dependencies.jar com.vandt.storm.benchmarking.Benching benching local null /results/ false
 ```
 
-Right now this is just a simpel speed of light test that looks at how many messages and MB can be pushed through a storm cluster.
+Very limited Benchmark tool to benchmark topologies locally or on a cluster and write results to disk in CSV format.
+
+Benchmark topologies by implementing the BaseTopology and Benchmark interfaces.
+Run solitary topologies with the BenchmarkTopology class and benchmarks consisting of multiple topologies with the Benching class.
