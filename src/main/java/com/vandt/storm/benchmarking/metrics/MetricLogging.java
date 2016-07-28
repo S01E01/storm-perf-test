@@ -72,7 +72,6 @@ public class MetricLogging{
         report.add("latency (ms)");
         report.add("total Failed");
         report.add("heap size MB");
-        report.add("int. results");
 
         for (String componentId : state.transferred.keySet()) {
             report.add(componentId + " (e/s)");
@@ -103,7 +102,6 @@ public class MetricLogging{
         report.add(String.format("%.2f", state.getLastCycleAvgMs()));
         report.add(Long.toString(state.totalCount(failed)));
         report.add(Long.toString(new MemoryUtils().heapMemoryUsed(MemoryUtils.FormatBytes.MB)));
-        report.add(Long.toString(state.intermediateResults));
 
         for (Long componentThroughput : cycleThroughput.values()) {
             report.add(Long.toString(componentThroughput));
