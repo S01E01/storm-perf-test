@@ -1,5 +1,8 @@
 *.class
 
+.idea
+.gitignore
+
 # Package Files #
 *.jar
 *.war
