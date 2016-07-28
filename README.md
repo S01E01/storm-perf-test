@@ -21,7 +21,7 @@ Storm Benchmarking
 Try this for examples benchmark: 
 
 ```
-storm jar ./target/storm_perf_test-1.0.0-SNAPSHOT-jar-with-dependencies.jar com.vandt.storm.benchmarking.Benching benching local null /results/ false
+storm jar ./target/storm_perf_test-1.0.0-SNAPSHOT-jar-with-dependencies.jar com.vandt.storm.benchmarking.Benching benching local null ./results/ false
 ```
 
 Very limited Benchmark tool to benchmark topologies locally or on a cluster and write results to disk in CSV format.
